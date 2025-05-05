@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+<link rel="stylesheet" href="styles/main.css">
+
+    
+    
+    <a href="/blog">
+        <div class="starterScreen">
+            <div class="transparent-bg"></div>
+    
+            <div class="icons">
+                <% for(let i = 1; i <= 4; i++) { %>
+                    <div class="icon">
+                        <% if(i === 1) { %>
+                            <img src="/img/icon<%= i %>.png">
+                            <p>Trash Can</p>
+                        <% } else if(i===2) { %>
+                            <img src="/img/icon<%= i %>.png">
+                            <p>Files Browser</p>
+                        <% } else if(i===3) { %>
+                            <img src="/img/icon<%= i %>.png">
+                            <p>RetroBlog</p>
+                        <% } else { %>
+                            <img src="/img/icon<%= i %>.png">
+                            <p>Coding App</p>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            
+            <div class="text">
+                <h1>RetroBlog</h1>
+    
+                <p>Press any key to start!!!</p>
+            </div>
+        </div>
+    </a>
+
+</body>
+</html>
