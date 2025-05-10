@@ -1,9 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser"
-import { fileURLToPath } from "url"
-import { dirname } from "path"
 
-const app = express()
+const app = express();
 const port = 3000;
 
 app.use(express.static("public"))
