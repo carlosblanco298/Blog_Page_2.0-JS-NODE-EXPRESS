@@ -89,7 +89,7 @@ h2 {
 }
 
 .show-compose .compose-screen form {
-    margin-top: 25vh;
+    margin-top: 25%;
     display: flex;
     flex-direction: column;
     width: 35rem;
@@ -97,7 +97,7 @@ h2 {
     background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
     z-index: 3;
 }
 
@@ -121,6 +121,11 @@ h2 {
     border-radius: 0.5rem;
     padding: 1rem;
     background-color: #fffcbd;
+}
+
+.show-compose .compose-screen form button:hover {
+    background-color: #424242;
+    color: white;
 }
 
 .show-compose #close-compose {
