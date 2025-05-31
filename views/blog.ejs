@@ -7,39 +7,44 @@
         <div>
             <a href="/creator">Creator</a>
             <a href="" id="compose" onclick="event.preventDefault();">Compose</a>
+
+            <section id="compose-screen" style="display: none;">
+
+                <div class="compose-screen">
+                    <form method="POST" action="/submit">
+                        <span id="close-compose"></span>
+                        <label for="title">Title</label>
+                        <input type="text" placeholder="Title" name="title" id="title"><br>
+                        <label for="description">Description</label>
+                        <input type="text" placeholder="Description" name="description" id="description"><br>
+                        <label for="content">Content</label>
+                        <textarea name="content" id="content"></textarea>
+                        <input class="button" type="submit" value="OK">
+                    </form>
+                </div>
+        
+            </section>
+
             <button type="button" id="light_dark_mode">DarkMode</button>
         </div>
     </div>
 </nav>
 
 
-
 <main class="container">
 
-    <div>
-        <p>Hello World</p>
-    </div>
-
     <section class="posts">
-        <div style="background-color: white; height: 10rem; width: 10rem;"></div>
+        <% if(locals.post_list){ %>
+            <% for(let i = 0; i < locals.post_list.length; i++) { %>
+                <div class="post">
+                    <h2><%= locals.post_list[i].title %></h2>
+                    <p><%= locals.post_list[i].description %></p>
+                    <p><%= locals.post_list[i].content %></p>
+                </div>
+            <% } %>
+        <% } %>
     </section>
 
-    <section id="compose-screen" style="display: none;">
-
-        <div class="compose-screen">
-            <form>
-                <span id="close-compose"></span>
-                <label for="title">Title</label>
-                <input type="text" placeholder="Title" id="title"><br>
-                <label for="description">Description</label>
-                <input type="text" placeholder="Description" id="description"><br>
-                <label for="content">Content</label>
-                <textarea name="content" id="content"></textarea>
-                <button type="submit">Post</button>
-            </form>
-        </div>
-
-    </section>
 </main>
 
 <script src="../js/main.js"></script>
