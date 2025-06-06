@@ -6,6 +6,10 @@
     --main-color: #fffcbd;
     --secondary-color: #ffbd59;
     --dark-color: #424242;
+    --nav-dark-bar-color: #44331a;
+    --border-dark-color: #828282;
+    --compose-background-dark: #3b3b3b;
+    --compose-dark-color: #505050;
 }
 
 html {
@@ -173,3 +177,39 @@ h2 {
     color: var(--dark-color);
 }
 
+/* DARK MODE */
+
+.dark-mode {
+    background-color: #3b3b3b;
+}
+
+.dark-mode nav {
+    background-color: var(--nav-dark-bar-color);
+    border-bottom: 2px solid var(--border-dark-color);
+}
+
+.dark-mode nav a {
+    color: white;
+}
+
+.dark-mode .show-compose .compose-screen form {
+    background-color: var(--compose-background-dark);
+}
+
+.dark-mode .show-compose .compose-screen form input, .dark-mode .show-compose .compose-screen form textarea {
+    background-color: var(--compose-dark-color);
+}
+
+.dark-mode .show-compose .compose-screen form .button {
+    background-color: var(--compose-dark-color);
+}
+
+.dark-mode .post {
+    background-color:   var(--compose-background-dark);
+    border-color: var(--border-dark-color);
+}
+
+.dark-mode .post h2, .dark-mode .post p {
+    color: white;
+}
+    
