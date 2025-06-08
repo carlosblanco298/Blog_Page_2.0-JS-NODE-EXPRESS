@@ -12,7 +12,7 @@
 
                 <div class="compose-screen">
                     <form method="POST" action="/submit">
-                        <span id="close-compose"></span>
+                        <span id="close-compose" class="circular_button"></span>
                         <label for="title">Title</label>
                         <input required type="text" placeholder="Title" name="title" id="title"><br>
                         <label for="description">Description</label>
@@ -40,7 +40,14 @@
         <% if(locals.post_list){ %>
             <% for(let i = 0; i < locals.post_list.length; i++) { %>
                 <div class="post">
-                    <h2><%= locals.post_list[i].title %></h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; margin-bottom: 1.3rem;">
+                        <h2><%= locals.post_list[i].title %></h2>
+                        <form method="POST" action="/delete" style="display: flex; gap: 0.5rem;">
+                            <input style="display: none;" name="id" id="id" value="<%= locals.post_list[i].id %>">
+                            <button id="edit-post" class="circular_button" style="margin-top: 0; background-color: #ff9d00;"></button>
+                            <button id="delete-post" class="circular_button" style="margin-top: 0;"></button>
+                        </form>
+                    </div>
                     <p><%= locals.post_list[i].description %></p>
                     <p><%= locals.post_list[i].content %></p>
                 </div>

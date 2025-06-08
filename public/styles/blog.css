@@ -139,7 +139,7 @@ h2 {
     color: white;
 }
 
-.show-compose #close-compose {
+.circular_button {
     border-radius: 50%;
     border: none;
     background-color: red;
@@ -149,6 +149,10 @@ h2 {
     margin: 0;
     margin-top: -1rem;
     align-self: flex-end;
+}
+
+.show-compose #close-compose {
+    background-color: red;
 }
 
 /*
@@ -169,7 +173,7 @@ h2 {
     height: 20rem;
 }
 
-.post h2, p {
+.post p {
     margin-bottom: 1.5rem;
 }
 
