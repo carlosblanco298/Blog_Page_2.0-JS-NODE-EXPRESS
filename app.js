@@ -27,8 +27,15 @@ app.post("/submit", (req, res) => {
 })
 
 app.post("/delete", (req, res) => {
-    post_list = post_list.filter((post) => post.id != req.body.id)
-    res.redirect("/blog")
+    try {
+        const deleteId = parseInt(req.body.id);
+        console.log(deleteId)
+        post_list = post_list.filter((post) => post.id != deleteId);
+        console.log(post_list)
+        res.redirect("/blog")
+    }catch (error) {
+        console.error(error.message);
+    }
 })
 
 app.listen(port, () => {
