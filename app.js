@@ -36,6 +36,19 @@ app.post("/delete", (req, res) => {
     }catch (error) {
         console.error(error.message);
     }
+});
+
+app.post("/edit_form", (req, res) => {
+    const postId = parseInt(req.body.id);
+    const foundIndex = post_list.findIndex((post) => post.id === postId);
+    res.render("edit.ejs", {postId: postId, title: post_list[foundIndex].title, description: post_list[foundIndex].description, content: post_list[foundIndex].content});
+});
+
+app.post("/post_edit", (req, res) => {
+    const postId = parseInt(req.body.id);
+    const foundIndex = post_list.findIndex((post) => post.id === postId);
+    post_list[foundIndex] = {id: postId, title: req.body.title, description: req.body.description, content: req.body.content};
+    res.redirect("/blog");
 })
 
 app.listen(port, () => {

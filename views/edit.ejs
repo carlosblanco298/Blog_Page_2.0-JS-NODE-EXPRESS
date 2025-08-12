@@ -33,33 +33,17 @@
     </div>
 </nav>
 
-
-<main class="container">
-
-    <section class="posts">
-        <% if(locals.post_list){ %>
-            <% for(let i = 0; i < locals.post_list.length; i++) { %>
-                <div class="post">
-                    <div style="display: flex; justify-content: space-between; align-items: center; text-align: center; margin-bottom: 1.3rem;">
-                        <h2><%= locals.post_list[i].title %></h2>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <form method="POST" action="/edit_form">
-                                <input style="display: none;" name="id" id="id" value="<%= locals.post_list[i].id %>">
-                                <button id="edit-post" class="circular_button" style="margin-top: 0; background-color: #ff9d00;"></button>
-                            </form>
-                            <form method="POST" action="/delete">
-                                <input style="display: none;" name="id" id="id" value="<%= locals.post_list[i].id %>">
-                                <button id="delete-post" class="circular_button" style="margin-top: 0;"></button>
-                            </form>
-                        </div>
-                    </div>
-                    <p><%= locals.post_list[i].description %></p>
-                    <p><%= locals.post_list[i].content %></p>
-                </div>
-            <% } %>
-        <% } %>
-    </section>
-
+<main>
+    <form method="POST" action="/post_edit" class="edit_screen">
+        <label for="title">Title</label>
+        <input required type="text" placeholder="Title" name="title" id="title" value="<%= locals.title %>"><br>
+        <label for="description">Description</label>
+        <input required type="text" placeholder="Description" name="description" id="description" value="<%= locals.description %>"><br>
+        <label for="content">Content</label>
+        <textarea required name="content" id="content"><%= locals.content %></textarea>
+        <input type="number" name="id" value="<%= locals.postId %>" style="display: none;">
+        <input class="button" type="submit" value="OK">
+    </form>
 </main>
 
 <script src="../js/main.js"></script>
